@@ -1,0 +1,13 @@
+body {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#buttonGroup {
+    float: left;
+}
+
+#buttonAdd {
+    float: right;
+}
