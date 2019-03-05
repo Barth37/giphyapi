@@ -4,14 +4,16 @@ var makes = ["Ferrari", "Lambourghini", "Porsche"];
 function displayCarImages() {
 
   var make = $(this).attr("data-name");
-  var queryURL = "http://api.giphy.com/v1/gifs/search?q=this.val()&api_key=W3E3i369d5ZPF5B3sDPCa4ggJDSlYf17=&limit=10";
+  var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + make + "&api_key=W3E3i369d5ZPF5B3sDPCa4ggJDSlYf17&limit=10";
 
   // Creates AJAX call for the specific movie button being clicked
   $.ajax({
     url: queryURL,
     method: "GET"
   }).then(function(response) {
-    $("carIMmages").text(JSON.stringify(response.image));
+    
+    $("#cars-view").text(JSON.stringify(response.image));
+    
    
     // YOUR CODE GOES HERE!!!
 
