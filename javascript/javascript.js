@@ -3,16 +3,17 @@ var makes = ["Ferrari", "Lambourghini", "Porsche"];
 // displayMovieInfo function re-renders the HTML to display the appropriate content
 function displayCarImages() {
 
-  var make = $(this).attr("data-name");
-  var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + make + "&api_key=W3E3i369d5ZPF5B3sDPCa4ggJDSlYf17&limit=10";
+  var cars = $(this).attr("data-name");
+  var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + cars + "&api_key=W3E3i369d5ZPF5B3sDPCa4ggJDSlYf17&limit=10";
 
   // Creates AJAX call for the specific movie button being clicked
   $.ajax({
     url: queryURL,
     method: "GET"
   }).then(function(response) {
-    
-    $("#cars-view").text(JSON.stringify(response.image));
+    console.log(response);
+    for (var i = 0; i < 10; i++);
+    $("#cars-view").text(JSON.stringify(response.data.url));
     
    
     // YOUR CODE GOES HERE!!!
@@ -43,7 +44,7 @@ function renderButtons() {
     }
   }
 
-    // This function handles events where the add movie button is clicked
+    // This function handles events where the add super car make button is clicked
     $("#add-car").on("click", function(event) {
         event.preventDefault();
         // This line of code will grab the input from the textbox
