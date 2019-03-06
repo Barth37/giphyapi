@@ -12,7 +12,20 @@ function displayCarImages() {
     method: "GET"
   }).then(function(response) {
     console.log(response);
-    for (var i = 0; i < 10; i++);
+    var data = response.data;
+    for (var i = 0; i < data.length; i++) {
+      console.log(data[i].url);
+      // create an img
+      var img = $("<img>");
+      // add src attribute
+      img.attr("src", data[i].images.fixed_height_still.url);
+      // add data-still attr
+      img.attr("data-still", data[i].images.fixed_height_still.url);
+      // add data-animate attr
+      img.attr("data-animate", data[i].images.fixed_height.url);
+      // append to DOM
+      $("#cars-view").append(img);
+    }
     $("#cars-view").text(JSON.stringify(response.data.url));
     
    
