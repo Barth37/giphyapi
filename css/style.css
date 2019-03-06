@@ -2,6 +2,11 @@ body {
     width: 960px;
     margin-left: auto;
     margin-right: auto;
+    background-color: lightblue;
+}
+
+h1 {
+    text-align: center;
 }
 
 button {
@@ -9,10 +14,6 @@ button {
     border-radius: 10px;
 }
 
-#buttonGroup {
-    float: left;
-}
-
-#buttonAdd {
-    float: right;
+#add-car {
+    margin-top: 20px;
 }
