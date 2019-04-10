@@ -33,20 +33,24 @@ function displayCarImages() {
 
   });
 }
+function clearBox() {
+  $("#cars-view").html("");
+}
 
 function renderButtons() {
 
     // Deletes the car prior to adding new cars
     // (this is necessary otherwise you will have repeat buttons)
     $("#buttons-view").empty();
+    
 
-    // Loops through the array of movies
+    // Loops through the array of cars
     for (var i = 0; i < makes.length; i++) {
 
-      // Then dynamicaly generates buttons for each movie in the array
+      // Then dynamicaly generates buttons for each car in the array
       // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
       var a = $("<button>");
-      // Adds a class of movie to our button
+      // Adds a class of car to our button
       a.addClass("make");
       // Added a data-attribute
       a.attr("data-name", makes[i]);
@@ -63,7 +67,7 @@ function renderButtons() {
         // This line of code will grab the input from the textbox
         var make = $("#car-input").val().trim();
 
-        // The movie from the textbox is then added to our array
+        // The car from the textbox is then added to our array
         makes.push(make);
 
         // Calling renderButtons which handles the processing of our movie array
@@ -72,7 +76,9 @@ function renderButtons() {
         });
 
         // Adding click event listeners to all elements with a class of "movie"
+        $(document).on("click", clearBox);
         $(document).on("click", ".make", displayCarImages);
 
         // Calling the renderButtons function to display the intial buttons
         renderButtons();
+      

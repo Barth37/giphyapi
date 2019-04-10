@@ -7,6 +7,9 @@ body {
 
 h1 {
     text-align: center;
+    border: 10px solid blue;
+    border-radius: 10px;
+    margin-bottom: 20px;
 }
 
 button {
@@ -16,4 +19,6 @@ button {
 
 #add-car {
     margin-top: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
 }
